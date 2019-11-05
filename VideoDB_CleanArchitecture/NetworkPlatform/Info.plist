@@ -18,5 +18,7 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>API Key</key>
+	<string>f7b95dac781c846648db2df0f34e314b</string>
 </dict>
 </plist>
