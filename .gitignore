@@ -66,3 +66,16 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+VideoDB_CleanArchitecture/Podfile
+VideoDB_CleanArchitecture/Podfile.lock
+VideoDB_CleanArchitecture/Pods/Manifest.lock
+VideoDB_CleanArchitecture/Pods/Pods.xcodeproj/project.pbxproj
+VideoDB_CleanArchitecture/Pods/Target Support Files/Pods-VideoDB_CleanArchitecture/Pods-VideoDB_CleanArchitecture-acknowledgements.markdown
+VideoDB_CleanArchitecture/Pods/Target Support Files/Pods-VideoDB_CleanArchitecture/Pods-VideoDB_CleanArchitecture-acknowledgements.plist
+VideoDB_CleanArchitecture/Pods/Target Support Files/Pods-VideoDB_CleanArchitecture/Pods-VideoDB_CleanArchitecture-dummy.m
+VideoDB_CleanArchitecture/Pods/Target Support Files/Pods-VideoDB_CleanArchitecture/Pods-VideoDB_CleanArchitecture-Info.plist
+VideoDB_CleanArchitecture/Pods/Target Support Files/Pods-VideoDB_CleanArchitecture/Pods-VideoDB_CleanArchitecture-umbrella.h
+VideoDB_CleanArchitecture/Pods/Target Support Files/Pods-VideoDB_CleanArchitecture/Pods-VideoDB_CleanArchitecture.debug.xcconfig
+VideoDB_CleanArchitecture/Pods/Target Support Files/Pods-VideoDB_CleanArchitecture/Pods-VideoDB_CleanArchitecture.modulemap
+VideoDB_CleanArchitecture/Pods/Target Support Files/Pods-VideoDB_CleanArchitecture/Pods-VideoDB_CleanArchitecture.release.xcconfig
+VideoDB_CleanArchitecture/VideoDB_CleanArchitecture.xcworkspace/contents.xcworkspacedata
