@@ -11,7 +11,7 @@ import RxSwift
 import Domain
 
 protocol MoviesResponseNetworkProtocol {
-    func fetchResponse(endPoint: MoviesResponse.KindOf) -> Observable<MoviesResponse>
+    func fetchResponse(kindOf: MoviesResponse.KindOf) -> Observable<MoviesResponse>
 }
 
 internal final class MoviesResponseNetwork: MoviesResponseNetworkProtocol {
@@ -22,7 +22,7 @@ internal final class MoviesResponseNetwork: MoviesResponseNetworkProtocol {
         self.apiKey = apiKey
     }
     
-    func fetchResponse(endPoint: MoviesResponse.KindOf) -> Observable<MoviesResponse> {
-        return network.getMovieResponse(apiKey: apiKey, kindOf: endPoint)
+    func fetchResponse(kindOf: MoviesResponse.KindOf) -> Observable<MoviesResponse> {
+        return network.getMovieResponse(apiKey: apiKey, kindOf: kindOf)
     }
 }

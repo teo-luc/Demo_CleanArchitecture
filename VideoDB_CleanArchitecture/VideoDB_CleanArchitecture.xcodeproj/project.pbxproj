@@ -388,7 +388,6 @@
 			isa = PBXGroup;
 			children = (
 				DD25446523726B86007C730C /* Constant.swift */,
-				DD24671B23716E1F002B101B /* APIs.swift */,
 				DD2544752372A4E0007C730C /* Entries */,
 				DD24671823716621002B101B /* Repository */,
 				DD24670E237162A8002B101B /* Network API */,
@@ -470,6 +469,7 @@
 		DD24671823716621002B101B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				DD24671B23716E1F002B101B /* APIs.swift */,
 				DD2467192371662F002B101B /* Network.swift */,
 				DD2544692372795A007C730C /* NetworkProvider.swift */,
 			);

@@ -34,3 +34,14 @@ extension MoviesResponse: Equatable {
             lhs.totalPages   == rhs.totalPages)
     }
 }
+
+// MARK: - MoviesResponse Extension
+
+public extension MoviesResponse {
+    enum KindOf: String {
+        case nowPlaying = "now_playing"
+        case upcoming
+        case popular
+        case topRated   = "top_rated"
+    }
+}

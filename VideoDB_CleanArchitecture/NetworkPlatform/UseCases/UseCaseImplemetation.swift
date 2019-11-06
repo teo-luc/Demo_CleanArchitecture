@@ -16,8 +16,8 @@ internal class UseCaseImplemetation: Domain.MovieUseCase {
     init(network: MoviesResponseNetwork /*, cache: Cache*/) {
         self.network = network
     }
-    func movies() -> Observable<[Movie]> {
-        return network.fetchResponse(endPoint: .nowPlaying).map { $0.movies }
+    func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]> {
+        return network.fetchResponse(kindOf: kindOf).map { $0.movies }
     }
     
     

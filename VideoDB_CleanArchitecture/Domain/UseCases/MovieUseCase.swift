@@ -9,5 +9,5 @@
 import RxSwift
 
 public protocol MovieUseCase {
-    func movies() -> Observable<[Movie]>
+    func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]>
 }

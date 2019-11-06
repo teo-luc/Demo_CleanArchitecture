@@ -9,15 +9,6 @@
 import Foundation
 import Domain
 
-public extension MoviesResponse {
-    enum KindOf: String {
-        case nowPlaying = "now_playing"
-        case upcoming
-        case popular
-        case topRated   = "top_rated"
-    }
-}
-
 extension MoviesResponse: Codable {
     private enum CodingKeys: String, CodingKey {
         case page

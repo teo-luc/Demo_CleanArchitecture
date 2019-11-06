@@ -26,7 +26,7 @@ internal final class Network<T: Decodable> {
     }
     
     public func getMovieResponse(apiKey: String, kindOf: MoviesResponse.KindOf) -> Observable<T> {
-        return request(.movies(url: endPoint, key: apiKey, type: kindOf))
+        return request(.movies(url: endPoint, key: apiKey, kindOf: kindOf.rawValue))
     }
     
     public func getMovie(apiKey: String, movieId: String) -> Observable<T> {

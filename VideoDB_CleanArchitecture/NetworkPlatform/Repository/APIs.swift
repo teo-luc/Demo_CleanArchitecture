@@ -13,7 +13,7 @@ import Domain
 // MARK: APIs
 
 internal enum APIs {
-    case movies     (url: String, key: String, type: MoviesResponse.KindOf)
+    case movies     (url: String, key: String, kindOf: String)
     case movieDetail(url: String, key: String, movieId: String)
 }
 
@@ -31,8 +31,8 @@ extension APIs: TargetType {
     public var path: String {
         var path = ""
         switch self {
-        case .movies(_, _, let type):
-            path = "/movie/\(type.rawValue)"
+        case .movies(_, _, let kindOf):
+            path = "/movie/\(kindOf)"
         case .movieDetail(_, _, let movieId):
             path = "/movie/\(movieId)"
         }
