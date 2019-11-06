@@ -29,14 +29,12 @@ extension APIs: TargetType {
     }
     
     public var path: String {
-        var path = ""
         switch self {
         case .movies(_, _, let kindOf):
-            path = "/movie/\(kindOf)"
+            return "/movie/\(kindOf)"
         case .movieDetail(_, _, let movieId):
-            path = "/movie/\(movieId)"
+            return "/movie/\(movieId)"
         }
-        return path
     }
     
     public var method: Moya.Method { return .get }
