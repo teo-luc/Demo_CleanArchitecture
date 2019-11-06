@@ -11,6 +11,7 @@ import Moya
 import RxSwift
 
 public final class Network<T: Decodable> {
+    
     private let provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
     private let scheduler: ConcurrentDispatchQueueScheduler
     
@@ -18,15 +19,12 @@ public final class Network<T: Decodable> {
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
     
-    deinit {
-        print(#line)
-    }
-    
-    public func getMovies(endPoint: Endpoint) -> Observable<[T]> {
-        return provider
+    public func getMovies(endPoint: Endpoint) -> Observable<T> {
+        return
+            provider
             .rx
-            .request(MultiTarget(VideoDB.movies(endPoint: endPoint)))
+            .request(MultiTarget(VideoDBAPI.movies(endPoint: endPoint)))
             .observeOn(scheduler)
-            .map([T].self).asObservable()
+            .map(T.self).asObservable()
     }
 }

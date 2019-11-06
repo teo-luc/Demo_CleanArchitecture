@@ -9,23 +9,18 @@
 import Foundation
 import Moya
 
-public enum Endpoint: String {
-    case nowPlaying = "now_playing"
-    case upcoming
-    case popular
-    case topRated = "top_rated"
-}
+// MARK: APIs
 
-public enum VideoDB {
+public enum VideoDBAPI {
     case movies(endPoint: Endpoint)
     case movieDetail(movieId: String)
 }
 
-private let apiKey = "f7b95dac781c846648db2df0f34e314b"
+// MARK: ---
 
-extension VideoDB: TargetType {
+extension VideoDBAPI: TargetType {
     public var baseURL: URL {
-        return URL(string: "https://api.themoviedb.org/3")!
+        return URL(string: BASE_URL)!
     }
     
     public var path: String {
@@ -54,12 +49,19 @@ extension VideoDB: TargetType {
     }
     
     public var task: Task {
-        return .requestParameters(parameters: ["api_key": apiKey], encoding: URLEncoding.default)
+        return .requestParameters(parameters: ["api_key": API_KEY], encoding: URLEncoding.default)
     }
     
     public var headers: [String : String]? {
         return nil
     }
-    
-    
+}
+
+// MARK: --
+
+public enum Endpoint: String {
+    case nowPlaying = "now_playing"
+    case upcoming
+    case popular
+    case topRated   = "top_rated"
 }

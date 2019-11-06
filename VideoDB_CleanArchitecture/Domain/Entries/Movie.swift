@@ -11,12 +11,12 @@ import Foundation
 // MARK: - Movie
 
 public struct Movie: Codable {
-    let id: Int
-    let posterPath: String
-    let originalTitle: String
-    let overview: String
-    let releaseDate: String
-    let voteAverage: Float
+    public let id            : Int
+    public let posterPath    : String
+    public let originalTitle : String
+    public let overview      : String
+    public let releaseDate   : String
+    public let voteAverage   : Float
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -41,7 +41,7 @@ public struct Movie: Codable {
 extension Movie: Equatable {
     public static func == (lhs: Movie, rhs: Movie) -> Bool {
         return (
-            lhs.id                  == rhs.id            &&
+                lhs.id              == rhs.id            &&
                 lhs.posterPath      == rhs.posterPath    &&
                 lhs.originalTitle   == rhs.originalTitle &&
                 lhs.overview        == rhs.overview      &&
@@ -49,13 +49,5 @@ extension Movie: Equatable {
                 lhs.voteAverage     == rhs.voteAverage
         )
     }
-}
-
-
-// MARK: - MoviesResponse
-
-public struct MovieResponse : Codable {
-    let movies: [Movie]
-    
 }
 
