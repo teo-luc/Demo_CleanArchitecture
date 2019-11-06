@@ -8,5 +8,7 @@
 
 import Foundation
 
-let BASE_URL    = "https://api.themoviedb.org/3"
-let API_KEY     = "f7b95dac781c846648db2df0f34e314b"
+// TODO: Will redefine this static variable..
+
+internal let BASE_URL    = "https://api.themoviedb.org/3"
+internal let API_KEY     = "f7b95dac781c846648db2df0f34e314b"

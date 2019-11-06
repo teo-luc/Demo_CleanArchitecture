@@ -10,29 +10,17 @@ import Foundation
 
 // MARK: - MoviesResponse
 
-public struct MoviesResponse : Codable {
+public struct MoviesResponse {
     public let page         : Int
     public let totalResults : Int
-    public let totalPages    : Int
+    public let totalPages   : Int
     public let movies       : [Movie]
-
-    private enum CodingKeys: String, CodingKey {
-        case page
-        case totalPages   = "total_pages"
-        case totalResults = "total_results"
-        case movies       = "results"
-    }
     
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        movies        = try container.decode([Movie].self, forKey: .movies)
-        page          = try container.decode(Int.self, forKey: .page)
-        totalResults  = try container.decode(Int.self, forKey: .totalResults)
-        totalPages    = try container.decode(Int.self, forKey: .totalPages)
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        
+    public init(page: Int, totalResults :Int, totalPages: Int, movies: [Movie]) {
+        self.page         = page
+        self.totalPages   = totalPages
+        self.totalResults = totalResults
+        self.movies       = movies
     }
 }
 
@@ -40,9 +28,9 @@ public struct MoviesResponse : Codable {
 extension MoviesResponse: Equatable {
     public static func == (lhs: MoviesResponse, rhs: MoviesResponse) -> Bool {
         return (
-            lhs.movies      == rhs.movies       &&
-            lhs.page        == rhs.page         &&
+            lhs.movies       == rhs.movies       &&
+            lhs.page         == rhs.page         &&
             lhs.totalResults == rhs.totalResults &&
-            lhs.totalPages  == rhs.totalPages)
+            lhs.totalPages   == rhs.totalPages)
     }
 }

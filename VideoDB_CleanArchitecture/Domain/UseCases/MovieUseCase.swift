@@ -8,6 +8,6 @@
 
 import RxSwift
 
-public protocol MoviesUseCase {
+public protocol MovieUseCase {
     func movies() -> Observable<[Movie]>
 }
