@@ -43,10 +43,33 @@ internal final class Network<T: Decodable> {
 
 extension Network {
     private func request<Type: Decodable>(_ api: APIs) -> Observable<Type> {
-        return provider.rx
-            .request(MultiTarget(api))
-            .observeOn(scheduler)
-            .asObservable().map(Type.self)
+    return Observable<Type>.create { (observer) -> Disposable in
+            let disposable = self.provider.rx
+                .request(MultiTarget(api))
+                .observeOn(self.scheduler)
+                .asObservable()
+                .subscribe(onNext: { (response) in
+//                    let statusCode = response.statusCode
+                    let jsonData = response.data
+                    let jsonDecoder = JSONDecoder()
+                    if let model = try? jsonDecoder.decode(Type.self, from: jsonData) {
+                        observer.onNext(model)
+                    } else {
+                        if let responseError = try? jsonDecoder.decode(ResponseError.self, from: jsonData) {
+                            observer.onError(APIError.authenticationError(description: responseError.statusMessage))
+                        } else {
+                            observer.onError(APIError.parserError(description: jsonData))
+                        }
+                    }
+                }, onError: { (error) in
+                    observer.onError(APIError.networkError(description: "Network Error",moreInfo: error))
+                })
+            return Disposables.create([disposable])
+        }
+//        return provider.rx
+//            .request(MultiTarget(api))
+//            .observeOn(scheduler)
+//            .asObservable().map(Type.self)
     }
 }
 

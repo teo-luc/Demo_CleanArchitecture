@@ -17,6 +17,12 @@ internal enum APIs {
     case movieDetail(url: String, key: String, movieId: String)
 }
 
+internal enum APIError: Error {
+    case networkError (description: String, moreInfo: Error)
+    case authenticationError (description: String)
+    case parserError (description: Data)
+}
+
 // MARK: APIs Extension
 
 extension APIs: TargetType {
