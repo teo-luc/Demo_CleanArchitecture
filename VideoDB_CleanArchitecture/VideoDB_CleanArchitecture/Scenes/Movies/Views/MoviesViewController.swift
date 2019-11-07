@@ -18,10 +18,10 @@ class MoviesViewController: UIViewController {
     //
     let disposeBag = DisposeBag()
     // TODO: Just only for testing..
-    let viewModel = MoviesViewModel(useCase: UseCaseProviderImplemetation().makeMovieUseCase())
+    let viewModel  = MoviesViewModel(useCase: UseCaseProviderImplemetation().makeMovieUseCase())
     //
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl : UISegmentedControl!
+    @IBOutlet weak var tableView        : UITableView!
     //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class MoviesViewController: UIViewController {
         // 1. Input
         let kindOf   = segmentedControl.rx.selectedSegmentIndex.asDriver()
         let pulldown = tableView.refreshControl!.rx.controlEvent(.valueChanged)
-                        .map { self.segmentedControl.selectedSegmentIndex }
+                        .map{[unowned self] in self.segmentedControl.selectedSegmentIndex }
                         .asDriverOnErrorJustComplete()
         let trigger  = Driver.merge(kindOf, pulldown)
         let input    = MoviesViewModel.Input(trigger : trigger)

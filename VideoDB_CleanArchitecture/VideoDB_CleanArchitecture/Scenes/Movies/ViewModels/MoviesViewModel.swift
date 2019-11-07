@@ -25,13 +25,15 @@ final class MoviesViewModel:  ViewModelType {
     }
     
     func transform(input: MoviesViewModel.Input) -> MoviesViewModel.Output {
-        let movieItems = input.trigger
-            .flatMapLatest {
-                self.useCase
-                    .movies(kindOf: MoviesResponse.KindOf(index: $0)!)
-                    .asDriverOnErrorJustComplete()
-                    .map { $0.map { MovieItemViewModel(movie: $0) } }
-        }
+        let movieItems =
+            input.trigger
+                .throttle(0.05)
+                .flatMapLatest {
+                    self.useCase
+                        .movies(kindOf: MoviesResponse.KindOf(index: $0)!)
+                        .asDriverOnErrorJustComplete()
+                        .map { $0.map { MovieItemViewModel(movie: $0) } }
+                }
         return Output(movieItems: movieItems)
     }
 }
