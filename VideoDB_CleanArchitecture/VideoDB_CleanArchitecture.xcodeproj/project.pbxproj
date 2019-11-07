@@ -12,11 +12,6 @@
 		266F300C2365A05A00203A96 /* VideoDB_CleanArchitecture.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 266F300A2365A05A00203A96 /* VideoDB_CleanArchitecture.xcdatamodeld */; };
 		266F300E2365A05B00203A96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 266F300D2365A05B00203A96 /* Assets.xcassets */; };
 		266F30112365A05B00203A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266F300F2365A05B00203A96 /* LaunchScreen.storyboard */; };
-		26C9C3BF2365A1E7008C88AD /* Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C9C3B62365A1E7008C88AD /* Application.framework */; };
-		26C9C3C62365A1E7008C88AD /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C9C3C52365A1E7008C88AD /* ApplicationTests.swift */; };
-		26C9C3C82365A1E7008C88AD /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C9C3B82365A1E7008C88AD /* Application.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26C9C3CB2365A1E7008C88AD /* Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C9C3B62365A1E7008C88AD /* Application.framework */; };
-		26C9C3CC2365A1E7008C88AD /* Application.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26C9C3B62365A1E7008C88AD /* Application.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26C9C4042365A21E008C88AD /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C9C3FB2365A21D008C88AD /* Domain.framework */; };
 		26C9C40B2365A21E008C88AD /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C9C40A2365A21E008C88AD /* DomainTests.swift */; };
 		26C9C40D2365A21E008C88AD /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C9C3FD2365A21D008C88AD /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,27 +60,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		26C9C3C02365A1E7008C88AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 266F2FF82365A05A00203A96 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 26C9C3B52365A1E7008C88AD;
-			remoteInfo = Application;
-		};
-		26C9C3C22365A1E7008C88AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 266F2FF82365A05A00203A96 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 266F2FFF2365A05A00203A96;
-			remoteInfo = VideoDB_CleanArchitecture;
-		};
-		26C9C3C92365A1E7008C88AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 266F2FF82365A05A00203A96 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 26C9C3B52365A1E7008C88AD;
-			remoteInfo = Application;
-		};
 		26C9C4052365A21E008C88AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 266F2FF82365A05A00203A96 /* Project object */;
@@ -161,7 +135,6 @@
 				26C9C4112365A21E008C88AD /* Domain.framework in Embed Frameworks */,
 				26C9C4332365A2DD008C88AD /* NetworkPlatform.framework in Embed Frameworks */,
 				26C9C4552365A334008C88AD /* CoredataPlatform.framework in Embed Frameworks */,
-				26C9C3CC2365A1E7008C88AD /* Application.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,12 +150,6 @@
 		266F300D2365A05B00203A96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		266F30102365A05B00203A96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		266F30122365A05B00203A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26C9C3B62365A1E7008C88AD /* Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26C9C3B82365A1E7008C88AD /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
-		26C9C3B92365A1E7008C88AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26C9C3BE2365A1E7008C88AD /* ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		26C9C3C52365A1E7008C88AD /* ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTests.swift; sourceTree = "<group>"; };
-		26C9C3C72365A1E7008C88AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C9C3FB2365A21D008C88AD /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C9C3FD2365A21D008C88AD /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		26C9C3FE2365A21D008C88AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,23 +207,7 @@
 				26C9C4102365A21E008C88AD /* Domain.framework in Frameworks */,
 				26C9C4322365A2DD008C88AD /* NetworkPlatform.framework in Frameworks */,
 				26C9C4542365A334008C88AD /* CoredataPlatform.framework in Frameworks */,
-				26C9C3CB2365A1E7008C88AD /* Application.framework in Frameworks */,
 				729CFD60F9EA66C89CA212DC /* Pods_VideoDB_CleanArchitecture.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26C9C3B32365A1E7008C88AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26C9C3BB2365A1E7008C88AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26C9C3BF2365A1E7008C88AD /* Application.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,9 +264,7 @@
 		266F2FF72365A05A00203A96 = {
 			isa = PBXGroup;
 			children = (
-				266F30022365A05A00203A96 /* VideoDB_CleanArchitecture */,
-				26C9C3B72365A1E7008C88AD /* Application */,
-				26C9C3C42365A1E7008C88AD /* ApplicationTests */,
+				266F30022365A05A00203A96 /* Application */,
 				26C9C3FC2365A21D008C88AD /* Domain */,
 				26C9C4092365A21E008C88AD /* DomainTests */,
 				26C9C41E2365A2DD008C88AD /* NetworkPlatform */,
@@ -332,8 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				266F30002365A05A00203A96 /* VideoDB_CleanArchitecture.app */,
-				26C9C3B62365A1E7008C88AD /* Application.framework */,
-				26C9C3BE2365A1E7008C88AD /* ApplicationTests.xctest */,
 				26C9C3FB2365A21D008C88AD /* Domain.framework */,
 				26C9C4032365A21E008C88AD /* DomainTests.xctest */,
 				26C9C41D2365A2DD008C88AD /* NetworkPlatform.framework */,
@@ -344,7 +291,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		266F30022365A05A00203A96 /* VideoDB_CleanArchitecture */ = {
+		266F30022365A05A00203A96 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				DDA61B9D2372D8330053478A /* Utility */,
@@ -357,25 +304,7 @@
 				266F30122365A05B00203A96 /* Info.plist */,
 				266F300A2365A05A00203A96 /* VideoDB_CleanArchitecture.xcdatamodeld */,
 			);
-			path = VideoDB_CleanArchitecture;
-			sourceTree = "<group>";
-		};
-		26C9C3B72365A1E7008C88AD /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				26C9C3B82365A1E7008C88AD /* Application.h */,
-				26C9C3B92365A1E7008C88AD /* Info.plist */,
-			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		26C9C3C42365A1E7008C88AD /* ApplicationTests */ = {
-			isa = PBXGroup;
-			children = (
-				26C9C3C52365A1E7008C88AD /* ApplicationTests.swift */,
-				26C9C3C72365A1E7008C88AD /* Info.plist */,
-			);
-			path = ApplicationTests;
 			sourceTree = "<group>";
 		};
 		26C9C3FC2365A21D008C88AD /* Domain */ = {
@@ -572,14 +501,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		26C9C3B12365A1E7008C88AD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26C9C3C82365A1E7008C88AD /* Application.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		26C9C3F62365A21D008C88AD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -621,7 +542,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				26C9C3CA2365A1E7008C88AD /* PBXTargetDependency */,
 				26C9C40F2365A21E008C88AD /* PBXTargetDependency */,
 				26C9C4312365A2DD008C88AD /* PBXTargetDependency */,
 				26C9C4532365A334008C88AD /* PBXTargetDependency */,
@@ -630,43 +550,6 @@
 			productName = VideoDB_CleanArchitecture;
 			productReference = 266F30002365A05A00203A96 /* VideoDB_CleanArchitecture.app */;
 			productType = "com.apple.product-type.application";
-		};
-		26C9C3B52365A1E7008C88AD /* Application */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 26C9C3D12365A1E7008C88AD /* Build configuration list for PBXNativeTarget "Application" */;
-			buildPhases = (
-				26C9C3B12365A1E7008C88AD /* Headers */,
-				26C9C3B22365A1E7008C88AD /* Sources */,
-				26C9C3B32365A1E7008C88AD /* Frameworks */,
-				26C9C3B42365A1E7008C88AD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Application;
-			productName = Application;
-			productReference = 26C9C3B62365A1E7008C88AD /* Application.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		26C9C3BD2365A1E7008C88AD /* ApplicationTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 26C9C3D32365A1E7008C88AD /* Build configuration list for PBXNativeTarget "ApplicationTests" */;
-			buildPhases = (
-				26C9C3BA2365A1E7008C88AD /* Sources */,
-				26C9C3BB2365A1E7008C88AD /* Frameworks */,
-				26C9C3BC2365A1E7008C88AD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				26C9C3C12365A1E7008C88AD /* PBXTargetDependency */,
-				26C9C3C32365A1E7008C88AD /* PBXTargetDependency */,
-			);
-			name = ApplicationTests;
-			productName = ApplicationTests;
-			productReference = 26C9C3BE2365A1E7008C88AD /* ApplicationTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		26C9C3FA2365A21D008C88AD /* Domain */ = {
 			isa = PBXNativeTarget;
@@ -794,13 +677,6 @@
 					266F2FFF2365A05A00203A96 = {
 						CreatedOnToolsVersion = 10.3;
 					};
-					26C9C3B52365A1E7008C88AD = {
-						CreatedOnToolsVersion = 10.3;
-					};
-					26C9C3BD2365A1E7008C88AD = {
-						CreatedOnToolsVersion = 10.3;
-						TestTargetID = 266F2FFF2365A05A00203A96;
-					};
 					26C9C3FA2365A21D008C88AD = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1110;
@@ -841,8 +717,6 @@
 			projectRoot = "";
 			targets = (
 				266F2FFF2365A05A00203A96 /* VideoDB_CleanArchitecture */,
-				26C9C3B52365A1E7008C88AD /* Application */,
-				26C9C3BD2365A1E7008C88AD /* ApplicationTests */,
 				26C9C3FA2365A21D008C88AD /* Domain */,
 				26C9C4022365A21E008C88AD /* DomainTests */,
 				26C9C41C2365A2DD008C88AD /* NetworkPlatform */,
@@ -861,20 +735,6 @@
 				266F30112365A05B00203A96 /* LaunchScreen.storyboard in Resources */,
 				266F300E2365A05B00203A96 /* Assets.xcassets in Resources */,
 				266F30092365A05A00203A96 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26C9C3B42365A1E7008C88AD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26C9C3BC2365A1E7008C88AD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,21 +885,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		26C9C3B22365A1E7008C88AD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26C9C3BA2365A1E7008C88AD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26C9C3C62365A1E7008C88AD /* ApplicationTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		26C9C3F72365A21D008C88AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1108,21 +953,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		26C9C3C12365A1E7008C88AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 26C9C3B52365A1E7008C88AD /* Application */;
-			targetProxy = 26C9C3C02365A1E7008C88AD /* PBXContainerItemProxy */;
-		};
-		26C9C3C32365A1E7008C88AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 266F2FFF2365A05A00203A96 /* VideoDB_CleanArchitecture */;
-			targetProxy = 26C9C3C22365A1E7008C88AD /* PBXContainerItemProxy */;
-		};
-		26C9C3CA2365A1E7008C88AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 26C9C3B52365A1E7008C88AD /* Application */;
-			targetProxy = 26C9C3C92365A1E7008C88AD /* PBXContainerItemProxy */;
-		};
 		26C9C4062365A21E008C88AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 26C9C3FA2365A21D008C88AD /* Domain */;
@@ -1341,98 +1171,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		26C9C3CD2365A1E7008C88AD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Application/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.examination.Application;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		26C9C3CE2365A1E7008C88AD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Application/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.examination.Application;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		26C9C3CF2365A1E7008C88AD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ApplicationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.examination.ApplicationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoDB_CleanArchitecture.app/VideoDB_CleanArchitecture";
-			};
-			name = Debug;
-		};
-		26C9C3D02365A1E7008C88AD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ApplicationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.examination.ApplicationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoDB_CleanArchitecture.app/VideoDB_CleanArchitecture";
 			};
 			name = Release;
 		};
@@ -1740,24 +1478,6 @@
 			buildConfigurations = (
 				266F30162365A05B00203A96 /* Debug */,
 				266F30172365A05B00203A96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		26C9C3D12365A1E7008C88AD /* Build configuration list for PBXNativeTarget "Application" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				26C9C3CD2365A1E7008C88AD /* Debug */,
-				26C9C3CE2365A1E7008C88AD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		26C9C3D32365A1E7008C88AD /* Build configuration list for PBXNativeTarget "ApplicationTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				26C9C3CF2365A1E7008C88AD /* Debug */,
-				26C9C3D02365A1E7008C88AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
