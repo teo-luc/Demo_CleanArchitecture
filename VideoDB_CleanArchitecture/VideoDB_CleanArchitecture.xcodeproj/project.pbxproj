@@ -264,7 +264,7 @@
 		266F2FF72365A05A00203A96 = {
 			isa = PBXGroup;
 			children = (
-				266F30022365A05A00203A96 /* Application */,
+				266F30022365A05A00203A96 /* VideoDB_CleanArchitecture */,
 				26C9C3FC2365A21D008C88AD /* Domain */,
 				26C9C4092365A21E008C88AD /* DomainTests */,
 				26C9C41E2365A2DD008C88AD /* NetworkPlatform */,
@@ -291,7 +291,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		266F30022365A05A00203A96 /* Application */ = {
+		266F30022365A05A00203A96 /* VideoDB_CleanArchitecture */ = {
 			isa = PBXGroup;
 			children = (
 				DDA61B9D2372D8330053478A /* Utility */,
@@ -304,7 +304,7 @@
 				266F30122365A05B00203A96 /* Info.plist */,
 				266F300A2365A05A00203A96 /* VideoDB_CleanArchitecture.xcdatamodeld */,
 			);
-			path = Application;
+			path = VideoDB_CleanArchitecture;
 			sourceTree = "<group>";
 		};
 		26C9C3FC2365A21D008C88AD /* Domain */ = {
