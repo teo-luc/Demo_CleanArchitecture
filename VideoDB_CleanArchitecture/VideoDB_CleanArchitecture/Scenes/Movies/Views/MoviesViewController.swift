@@ -38,16 +38,21 @@ class MoviesViewController: UIViewController {
     
     private func bind() {
         // 1. Input
-        let kindOf = segmentedControl.rx.selectedSegmentIndex.asDriver()
-        let pulldown = tableView.refreshControl!.rx.controlEvent(.valueChanged).map { true }
-            .asDriver(onErrorJustReturn: true)
-        let input = MoviesViewModel.Input(kindOf: kindOf, pulldown: pulldown)
+        let kindOf   = segmentedControl.rx.selectedSegmentIndex.asDriver()
+        let pulldown = tableView.refreshControl!.rx.controlEvent(.valueChanged)
+                        .map { self.segmentedControl.selectedSegmentIndex }
+                        .asDriverOnErrorJustComplete()
+        let trigger  = Driver.merge(kindOf, pulldown)
+        let input    = MoviesViewModel.Input(trigger : trigger)
+        
         // 2. Output
         let output = viewModel.transform(input: input)
+        
+        // 3.
         output.movieItems
-            .drive(tableView.rx.items(cellIdentifier: MovieItemViewCell.reuseID)) { index, model, cell in
-                (cell as! MovieItemViewCell).bind(viewModel: model)
-            }.disposed(by: disposeBag)
+                .drive(tableView.rx.items(cellIdentifier: MovieItemViewCell.reuseID)) { _, model, cell in
+                    (cell as! MovieItemViewCell).bind(viewModel: model)
+                }.disposed(by: disposeBag)
     }
 }
 

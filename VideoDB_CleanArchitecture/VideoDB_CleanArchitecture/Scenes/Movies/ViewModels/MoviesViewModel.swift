@@ -12,8 +12,7 @@ import Domain
 
 final class MoviesViewModel:  ViewModelType {
     struct Input {
-        let kindOf: Driver<Int>
-        let pulldown: Driver<Bool>
+        let trigger: Driver<Int>
     }
     
     struct Output {
@@ -26,18 +25,13 @@ final class MoviesViewModel:  ViewModelType {
     }
     
     func transform(input: MoviesViewModel.Input) -> MoviesViewModel.Output {
-        let movieItems = input.kindOf.flatMapLatest {
-            self.useCase.movies(kindOf: MoviesResponse.KindOf(index: $0)!)
-                .asDriver(onErrorJustReturn: [])
-                .map { $0.map { MovieItemViewModel(movie: $0) } }
+        let movieItems = input.trigger
+            .flatMapLatest {
+                self.useCase
+                    .movies(kindOf: MoviesResponse.KindOf(index: $0)!)
+                    .asDriverOnErrorJustComplete()
+                    .map { $0.map { MovieItemViewModel(movie: $0) } }
         }
-//        let movieItems = Driver<Any>.zip(input.kindOf, input.pulldown)
-//            .map {
-//                self.useCase.movies(kindOf: MoviesResponse.KindOf(index: $0.0)!)
-//                .asDriver(onErrorJustReturn: [])
-//                    .map { $0.map { MovieItemViewModel(movie: $0) } }
-//        }
-
         return Output(movieItems: movieItems)
     }
 }
