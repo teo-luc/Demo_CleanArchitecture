@@ -38,11 +38,9 @@ internal final class Network<T: Decodable> {
 
 extension Network {
     private func request<Type: Decodable>(_ api: APIs) -> Observable<Type> {
-        return provider
-                .rx
-                .request(MultiTarget(api))
-                .observeOn(scheduler)
-                .asObservable().map(Type.self)
-
+        return provider.rx
+            .request(MultiTarget(api))
+            .observeOn(scheduler)
+            .asObservable().map(Type.self)
     }
 }
