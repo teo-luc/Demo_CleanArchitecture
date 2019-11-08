@@ -12,14 +12,14 @@ import Domain
 
 // MARK: APIs
 
-internal enum APIs {
+internal enum APITarget {
     case movies     (url: String, key: String, kindOf: String)
     case movieDetail(url: String, key: String, movieId: String)
 }
 
 // MARK: APIs Extension
 
-extension APIs: TargetType {
+extension APITarget: TargetType {
     public var baseURL: URL {
         switch self {
         case .movies     (let baseURL, _, _),
