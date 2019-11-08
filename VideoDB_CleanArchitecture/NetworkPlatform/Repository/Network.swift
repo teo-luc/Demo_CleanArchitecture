@@ -42,7 +42,7 @@ internal final class Network<T: Decodable> {
 // MARK: Network Extension
 
 extension Network {
-    private func request<Type: Decodable>(_ api: APIs) -> Observable<Type> {
+    private func request<Type: Decodable>(_ api: APITarget) -> Observable<Type> {
     return Observable<Type>.create { (observer) -> Disposable in
             let disposable = self.provider.rx
                 .request(MultiTarget(api))
@@ -52,24 +52,36 @@ extension Network {
 //                    let statusCode = response.statusCode
                     let jsonData = response.data
                     let jsonDecoder = JSONDecoder()
+                    
+                    /*
+                     * Success case:
+                     */
                     if let model = try? jsonDecoder.decode(Type.self, from: jsonData) {
                         observer.onNext(model)
-                    } else {
-                        if let responseError = try? jsonDecoder.decode(ResponseError.self, from: jsonData) {
-                            observer.onError(APIError.authenticationError(description: responseError.statusMessage))
-                        } else {
-                            observer.onError(APIError.parserError(description: jsonData))
+                    }
+                        
+                    /*
+                    * Error case:
+                    */
+                    else {
+                        //
+                        let jsonString = String(data: jsonData, encoding: .utf8)
+                        // 1. API Error
+                        if let apiError = try? jsonDecoder.decode(ResponseError.self, from: jsonData) {
+                            let code = apiError.statusCode
+                            let description = apiError.statusMessage
+                            observer.onError(APIError.apiError(code: code, description: description, info: jsonString))
+                        }
+                        // 2. Parser Error
+                        else {
+                            observer.onError(APIError.parserError(description: "Parser Error", info: jsonString))
                         }
                     }
                 }, onError: { (error) in
-                    observer.onError(APIError.networkError(description: "Network Error",moreInfo: error))
+                    observer.onError(APIError.networkError(code: -500))
                 })
             return Disposables.create([disposable])
         }
-//        return provider.rx
-//            .request(MultiTarget(api))
-//            .observeOn(scheduler)
-//            .asObservable().map(Type.self)
     }
 }
 

@@ -13,6 +13,7 @@ import RxDataSources
 //
 import NetworkPlatform
 //
+import Domain
 
 class MoviesViewController: UIViewController {
     //

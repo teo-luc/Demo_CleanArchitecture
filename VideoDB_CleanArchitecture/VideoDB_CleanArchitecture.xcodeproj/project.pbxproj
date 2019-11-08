@@ -35,7 +35,6 @@
 		DD246716237164AA002B101B /* UseCaseProviderImplemetation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD246714237164AA002B101B /* UseCaseProviderImplemetation.swift */; };
 		DD246717237165BE002B101B /* UseCaseProviderImplemetation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD246714237164AA002B101B /* UseCaseProviderImplemetation.swift */; };
 		DD24671A2371662F002B101B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2467192371662F002B101B /* Network.swift */; };
-		DD24671C23716E1F002B101B /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24671B23716E1F002B101B /* APIs.swift */; };
 		DD25446623726B86007C730C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD25446523726B86007C730C /* Constant.swift */; };
 		DD25446A2372795A007C730C /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2544692372795A007C730C /* NetworkProvider.swift */; };
 		DD25446B2372795A007C730C /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2544692372795A007C730C /* NetworkProvider.swift */; };
@@ -47,6 +46,8 @@
 		DD2544742372893E007C730C /* MovieUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2544722372893E007C730C /* MovieUseCase.swift */; };
 		DD2544772372A705007C730C /* MoviesResponse+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2544762372A705007C730C /* MoviesResponse+Mapping.swift */; };
 		DD2544792372AC7A007C730C /* Movie+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2544782372AC7A007C730C /* Movie+Mapping.swift */; };
+		DD2F567523755C6100BEC8C9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F567423755C6100BEC8C9 /* APIError.swift */; };
+		DD2F56772375630000BEC8C9 /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F5676237562FF00BEC8C9 /* APITarget.swift */; };
 		DDA61B8D2372C1510053478A /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA61B8C2372C1510053478A /* MoviesViewController.swift */; };
 		DDA61B8F2372C20A0053478A /* MovieItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA61B8E2372C20A0053478A /* MovieItemViewCell.swift */; };
 		DDA61B932372C24D0053478A /* MovieItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA61B922372C24D0053478A /* MovieItemViewModel.swift */; };
@@ -181,7 +182,6 @@
 		DD24670F237162D5002B101B /* MovieNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetwork.swift; sourceTree = "<group>"; };
 		DD246714237164AA002B101B /* UseCaseProviderImplemetation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProviderImplemetation.swift; sourceTree = "<group>"; };
 		DD2467192371662F002B101B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		DD24671B23716E1F002B101B /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		DD25446523726B86007C730C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DD2544692372795A007C730C /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		DD25446C23728570007C730C /* MoviesResponseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponseNetwork.swift; sourceTree = "<group>"; };
@@ -189,6 +189,8 @@
 		DD2544722372893E007C730C /* MovieUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieUseCase.swift; sourceTree = "<group>"; };
 		DD2544762372A705007C730C /* MoviesResponse+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesResponse+Mapping.swift"; sourceTree = "<group>"; };
 		DD2544782372AC7A007C730C /* Movie+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Mapping.swift"; sourceTree = "<group>"; };
+		DD2F567423755C6100BEC8C9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		DD2F5676237562FF00BEC8C9 /* APITarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
 		DDA61B8C2372C1510053478A /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		DDA61B8E2372C20A0053478A /* MovieItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemViewCell.swift; sourceTree = "<group>"; };
 		DDA61B922372C24D0053478A /* MovieItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemViewModel.swift; sourceTree = "<group>"; };
@@ -419,7 +421,8 @@
 		DD24671823716621002B101B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				DD24671B23716E1F002B101B /* APIs.swift */,
+				DD2F567423755C6100BEC8C9 /* APIError.swift */,
+				DD2F5676237562FF00BEC8C9 /* APITarget.swift */,
 				DD2467192371662F002B101B /* Network.swift */,
 				DD2544692372795A007C730C /* NetworkProvider.swift */,
 			);
@@ -926,9 +929,10 @@
 				DD25446D23728570007C730C /* MoviesResponseNetwork.swift in Sources */,
 				DD246712237162D5002B101B /* MovieNetwork.swift in Sources */,
 				DD2544772372A705007C730C /* MoviesResponse+Mapping.swift in Sources */,
+				DD2F567523755C6100BEC8C9 /* APIError.swift in Sources */,
 				DD25446623726B86007C730C /* Constant.swift in Sources */,
+				DD2F56772375630000BEC8C9 /* APITarget.swift in Sources */,
 				DDDE77822374283500C55201 /* ResponseError.swift in Sources */,
-				DD24671C23716E1F002B101B /* APIs.swift in Sources */,
 				DD24671A2371662F002B101B /* Network.swift in Sources */,
 				DD25447023728829007C730C /* UseCaseImplemetation.swift in Sources */,
 				DD25446A2372795A007C730C /* NetworkProvider.swift in Sources */,
