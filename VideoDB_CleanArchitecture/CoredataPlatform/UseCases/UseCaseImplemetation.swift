@@ -17,6 +17,16 @@ internal class UseCaseImplemetation<Repository>: Domain.MovieUseCase where Repos
     }
     
     func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]> {
+        let movie = Movie.init(movieId: 100,
+                   posterPath: "posterPath",
+                   originalTitle: "originalTitle",
+                   overview: "overview",
+                   releaseDate: "2019-10-21",
+                   voteAverage: 8.1)
+//        self.repository.save(entity: movie).subscribe(onNext: { _ in
+//            print("Save Done")
+//        })
+        
         let sort = NSSortDescriptor(key: Movie.CodingKeys.id.rawValue, ascending: true)
         return repository.query(with: nil, sortDescriptors: [sort])
     }

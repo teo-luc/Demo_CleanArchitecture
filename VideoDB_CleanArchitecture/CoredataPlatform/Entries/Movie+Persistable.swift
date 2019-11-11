@@ -31,7 +31,7 @@ extension Movie : Persistable {
     public typealias T = NSManagedObject
     
     public static var entityName: String {
-        return "CD_Movie"
+        return "Movie"
     }
     
     public static var primaryAttributeName: String {

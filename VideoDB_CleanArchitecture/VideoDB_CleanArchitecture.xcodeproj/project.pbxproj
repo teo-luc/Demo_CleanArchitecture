@@ -56,7 +56,7 @@
 		DD982790237943AC00C849D6 /* UseCaseProviderImplemetation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98278E237943AC00C849D6 /* UseCaseProviderImplemetation.swift */; };
 		DD98279323794A7700C849D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD98279123794A7700C849D6 /* Model.xcdatamodeld */; };
 		DD98279423794A7700C849D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD98279123794A7700C849D6 /* Model.xcdatamodeld */; };
-		DD98279523794AA600C849D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD98279123794A7700C849D6 /* Model.xcdatamodeld */; };
+		DD98279623794DB500C849D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD98279123794A7700C849D6 /* Model.xcdatamodeld */; };
 		DDA32FEB237912A400824D0D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA32FE9237912A400824D0D /* CoreDataStack.swift */; };
 		DDA3302B237920D900824D0D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA32FE9237912A400824D0D /* CoreDataStack.swift */; };
 		DDA330362379348C00824D0D /* Movie+Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA330352379348C00824D0D /* Movie+Persistable.swift */; };
@@ -984,7 +984,7 @@
 				DDA61B8F2372C20A0053478A /* MovieItemViewCell.swift in Sources */,
 				DDDE777E2373FD8900C55201 /* ActivityIndicator.swift in Sources */,
 				DDA61B982372C8980053478A /* MoviesViewModel.swift in Sources */,
-				DD98279523794AA600C849D6 /* Model.xcdatamodeld in Sources */,
+				DD98279623794DB500C849D6 /* Model.xcdatamodeld in Sources */,
 				DDA61B8D2372C1510053478A /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
