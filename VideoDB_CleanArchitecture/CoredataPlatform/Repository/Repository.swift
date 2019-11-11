@@ -18,7 +18,7 @@ protocol AbstractRepository {
     func delete(entity: T) -> Observable<Void>
 }
 
-final class Repository<T: Persistable>: AbstractRepository  {
+final class Repository<T: Persistable>: AbstractRepository {
     private let context: NSManagedObjectContext
     init(context: NSManagedObjectContext) {
         self.context = context

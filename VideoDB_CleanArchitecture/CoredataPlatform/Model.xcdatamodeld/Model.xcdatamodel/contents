@@ -11,10 +11,10 @@
     </entity>
     <entity name="Movies" representedClassName="" syncable="YES">
         <attribute name="kindOf" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="movies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Movie" inverseName="movies" inverseEntity="Movie"/>
+        <relationship name="movies" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Movie" inverseName="movies" inverseEntity="Movie"/>
     </entity>
     <elements>
-        <element name="Movie" positionX="-54" positionY="0" width="128" height="148"/>
+        <element name="Movie" positionX="-103.81640625" positionY="97.18359375" width="128" height="148"/>
         <element name="Movies" positionX="-374.63671875" positionY="-32.30859375" width="128" height="73"/>
     </elements>
 </model>
