@@ -13,9 +13,11 @@ import Domain
 
 internal class UseCaseImplemetation: Domain.MovieUseCase {
     private let network: MoviesResponseNetwork
+    
     init(network: MoviesResponseNetwork /*, cache: Cache*/) {
         self.network = network
     }
+    
     func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]> {
         return network.fetchResponse(kindOf: kindOf).map { $0.movies }
     }

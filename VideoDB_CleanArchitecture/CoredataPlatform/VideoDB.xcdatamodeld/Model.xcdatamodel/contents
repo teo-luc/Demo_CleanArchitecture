@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CD_Movie" representedClassName="" syncable="YES">
+        <attribute name="movieId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="originalTitle" optional="YES" attributeType="String"/>
+        <attribute name="overview" optional="YES" attributeType="String"/>
+        <attribute name="posterPath" optional="YES" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String"/>
+        <attribute name="voteAverage" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CD_Movies" inverseName="movies" inverseEntity="CD_Movies"/>
+    </entity>
+    <entity name="CD_Movies" representedClassName="" syncable="YES">
+        <attribute name="kindOf" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="movies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CD_Movie" inverseName="movies" inverseEntity="CD_Movie"/>
+    </entity>
+    <elements>
+        <element name="CD_Movie" positionX="-54" positionY="0" width="128" height="148"/>
+        <element name="CD_Movies" positionX="-374.63671875" positionY="-32.30859375" width="128" height="73"/>
+    </elements>
+</model>

@@ -6,6 +6,8 @@ def pods
   pod 'Moya/RxSwift'
 end
 
+#MARK: - VideoDB_CleanArchitecture Target
+
 target 'VideoDB_CleanArchitecture' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
@@ -18,6 +20,7 @@ target 'VideoDB_CleanArchitecture' do
 
 end
 
+#MARK: - Domain Target
 
 target 'Domain' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -28,12 +31,25 @@ target 'Domain' do
   
 end
 
+#MARK: - NetworkPlatform Target
+
 target 'NetworkPlatform' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Domain
+  # Pods for NetworkPlatform
   pods
   
 end
 
+#MARK: - CoredataPlatform Target
+
+target 'CoredataPlatform' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CoredataPlatform
+  pod 'RxCoreData'
+  pod 'RxDataSources'
+
+end
