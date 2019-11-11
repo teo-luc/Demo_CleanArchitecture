@@ -11,7 +11,8 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 //
-import NetworkPlatform
+//import NetworkPlatform
+import CoredataPlatform
 //
 import Domain
 

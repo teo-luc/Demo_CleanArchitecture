@@ -8,14 +8,14 @@
 
 import Domain
 
-internal class UseCaseProviderImplemetation: Domain.UseCaseProvider {
+open class UseCaseProviderImplemetation: Domain.UseCaseProvider {
     private let coreDataStack = CoreDataStack()
     private let postRepository: Repository<Movie>
     public init() {
         postRepository = Repository<Movie>(context: coreDataStack.context)
     }
     
-    func makeMovieUseCase() -> MovieUseCase {
+    public func makeMovieUseCase() -> MovieUseCase {
         return UseCaseImplemetation(repository: postRepository)
     }
 }

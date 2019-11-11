@@ -54,8 +54,9 @@
 		DD98278D237943A000C849D6 /* UseCaseImplemetation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98278B237943A000C849D6 /* UseCaseImplemetation.swift */; };
 		DD98278F237943AC00C849D6 /* UseCaseProviderImplemetation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98278E237943AC00C849D6 /* UseCaseProviderImplemetation.swift */; };
 		DD982790237943AC00C849D6 /* UseCaseProviderImplemetation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98278E237943AC00C849D6 /* UseCaseProviderImplemetation.swift */; };
-		DDA32FE72378FD5B00824D0D /* VideoDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDA32FE52378FD5B00824D0D /* VideoDB.xcdatamodeld */; };
-		DDA32FE82378FD5B00824D0D /* VideoDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDA32FE52378FD5B00824D0D /* VideoDB.xcdatamodeld */; };
+		DD98279323794A7700C849D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD98279123794A7700C849D6 /* Model.xcdatamodeld */; };
+		DD98279423794A7700C849D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD98279123794A7700C849D6 /* Model.xcdatamodeld */; };
+		DD98279523794AA600C849D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD98279123794A7700C849D6 /* Model.xcdatamodeld */; };
 		DDA32FEB237912A400824D0D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA32FE9237912A400824D0D /* CoreDataStack.swift */; };
 		DDA3302B237920D900824D0D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA32FE9237912A400824D0D /* CoreDataStack.swift */; };
 		DDA330362379348C00824D0D /* Movie+Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA330352379348C00824D0D /* Movie+Persistable.swift */; };
@@ -209,7 +210,7 @@
 		DD98278723793D3B00C849D6 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DD98278B237943A000C849D6 /* UseCaseImplemetation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseImplemetation.swift; sourceTree = "<group>"; };
 		DD98278E237943AC00C849D6 /* UseCaseProviderImplemetation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProviderImplemetation.swift; sourceTree = "<group>"; };
-		DDA32FE62378FD5B00824D0D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DD98279223794A7700C849D6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DDA32FE9237912A400824D0D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		DDA330352379348C00824D0D /* Movie+Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Persistable.swift"; sourceTree = "<group>"; };
 		DDA33038237939B500824D0D /* MoviesResponse+Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesResponse+Persistable.swift"; sourceTree = "<group>"; };
@@ -385,13 +386,13 @@
 		26C9C4402365A334008C88AD /* CoredataPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				DD98279123794A7700C849D6 /* Model.xcdatamodeld */,
 				DD98278A2379438600C849D6 /* UseCases */,
 				DD98278623793CF700C849D6 /* Repository */,
 				DDA32FED23791A0B00824D0D /* Entries */,
 				DDA32FEC237912AF00824D0D /* CoreDataStack */,
 				26C9C4412365A334008C88AD /* CoredataPlatform.h */,
 				26C9C4422365A334008C88AD /* Info.plist */,
-				DDA32FE52378FD5B00824D0D /* VideoDB.xcdatamodeld */,
 			);
 			path = CoredataPlatform;
 			sourceTree = "<group>";
@@ -983,6 +984,7 @@
 				DDA61B8F2372C20A0053478A /* MovieItemViewCell.swift in Sources */,
 				DDDE777E2373FD8900C55201 /* ActivityIndicator.swift in Sources */,
 				DDA61B982372C8980053478A /* MoviesViewModel.swift in Sources */,
+				DD98279523794AA600C849D6 /* Model.xcdatamodeld in Sources */,
 				DDA61B8D2372C1510053478A /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1046,7 +1048,7 @@
 				DD98278C237943A000C849D6 /* UseCaseImplemetation.swift in Sources */,
 				DD98278F237943AC00C849D6 /* UseCaseProviderImplemetation.swift in Sources */,
 				DDA3302B237920D900824D0D /* CoreDataStack.swift in Sources */,
-				DDA32FE72378FD5B00824D0D /* VideoDB.xcdatamodeld in Sources */,
+				DD98279323794A7700C849D6 /* Model.xcdatamodeld in Sources */,
 				DD98278823793D3B00C849D6 /* Repository.swift in Sources */,
 				DDA330362379348C00824D0D /* Movie+Persistable.swift in Sources */,
 				DDA33039237939B500824D0D /* MoviesResponse+Persistable.swift in Sources */,
@@ -1061,8 +1063,8 @@
 				DD982790237943AC00C849D6 /* UseCaseProviderImplemetation.swift in Sources */,
 				DD246716237164AA002B101B /* UseCaseProviderImplemetation.swift in Sources */,
 				26C9C44F2365A334008C88AD /* CoredataPlatformTests.swift in Sources */,
-				DDA32FE82378FD5B00824D0D /* VideoDB.xcdatamodeld in Sources */,
 				DDA3303A237939B500824D0D /* MoviesResponse+Persistable.swift in Sources */,
+				DD98279423794A7700C849D6 /* Model.xcdatamodeld in Sources */,
 				DDA32FEB237912A400824D0D /* CoreDataStack.swift in Sources */,
 				DD98278D237943A000C849D6 /* UseCaseImplemetation.swift in Sources */,
 				DDA330372379348C00824D0D /* Movie+Persistable.swift in Sources */,
@@ -1662,13 +1664,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DDA32FE52378FD5B00824D0D /* VideoDB.xcdatamodeld */ = {
+		DD98279123794A7700C849D6 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DDA32FE62378FD5B00824D0D /* Model.xcdatamodel */,
+				DD98279223794A7700C849D6 /* Model.xcdatamodel */,
 			);
-			currentVersion = DDA32FE62378FD5B00824D0D /* Model.xcdatamodel */;
-			path = VideoDB.xcdatamodeld;
+			currentVersion = DD98279223794A7700C849D6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
