@@ -11,7 +11,7 @@ import RxSwift
 import Domain
 
 
-internal class UseCaseImplemetation: Domain.MovieUseCase {
+internal class NWMovieUseCase: Domain.MovieUseCase {
     private let network: MoviesResponseNetwork
     
     init(network: MoviesResponseNetwork /*, cache: Cache*/) {

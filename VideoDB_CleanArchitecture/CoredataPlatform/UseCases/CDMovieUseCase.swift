@@ -9,7 +9,7 @@
 import Domain
 import RxSwift
 
-internal class UseCaseImplemetation<Repository>: Domain.MovieUseCase where Repository: AbstractRepository, Repository.T == Movie {
+internal class CDMovieUseCase<Repository>: Domain.MovieUseCase where Repository: AbstractRepository, Repository.T == Movie {
     private let repository: Repository
     
     init(repository: Repository) {
@@ -17,17 +17,7 @@ internal class UseCaseImplemetation<Repository>: Domain.MovieUseCase where Repos
     }
     
     func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]> {
-//        let mv = Movie(movieId: 200,
-//              posterPath: "posterPath",
-//              originalTitle: "originalTitle", overview: "overview", releaseDate: "releaseDate", voteAverage: 0)
-//
-//        repository.save(entity: mv).asObservable().subscribe(onNext: { (arg0) in
-//
-//            let () = arg0
-//            print("___")
-//        })
         let sort = NSSortDescriptor(key: CDMovie.CodingKeys.id.rawValue, ascending: true)
         return repository.query(with: nil, sortDescriptors: [sort])
     }
-    
 }

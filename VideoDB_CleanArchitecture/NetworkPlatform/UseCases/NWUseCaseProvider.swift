@@ -10,13 +10,13 @@ import Foundation
 import Domain
 
 
-public final class UseCaseProviderImplemetation: Domain.UseCaseProvider {
+public final class NWUseCaseProvider: Domain.UseCaseProvider {
     private let networkProvider: NetworkProvider
     public init() {
         networkProvider = NetworkProvider()
     }
     public func makeMovieUseCase() -> Domain.MovieUseCase {
-        return UseCaseImplemetation(network: networkProvider.makeMoviesResponseNetwork())
+        return NWMovieUseCase(network: networkProvider.makeMoviesResponseNetwork())
     }
     
 

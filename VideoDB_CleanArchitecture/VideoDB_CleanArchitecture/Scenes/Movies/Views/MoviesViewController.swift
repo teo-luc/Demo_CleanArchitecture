@@ -20,7 +20,7 @@ class MoviesViewController: UIViewController {
     //
     let disposeBag = DisposeBag()
     // TODO: Just only for testing..
-    let viewModel  = MoviesViewModel(useCase: UseCaseProviderImplemetation().makeMovieUseCase())
+    let viewModel  = MoviesViewModel(useCase: CDUseCaseProvider().makeMovieUseCase())
     //
     @IBOutlet weak var segmentedControl : UISegmentedControl!
     @IBOutlet weak var tableView        : UITableView!

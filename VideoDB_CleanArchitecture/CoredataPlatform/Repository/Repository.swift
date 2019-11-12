@@ -31,9 +31,8 @@ final class Repository<T: CoreDataRepresentable>: AbstractRepository where T == 
     
     func save(entity: T) -> Observable<Void> {
         return Observable<Void>.create { (observer) -> Disposable in
-            let coreData = entity.asCoreData()
             do {
-                observer.onNext(try self.context.rx.update(coreData))
+                observer.onNext(try self.context.rx.update(entity.asCoreData()))
             } catch let error {
                 observer.onError(error)
             }
@@ -43,9 +42,8 @@ final class Repository<T: CoreDataRepresentable>: AbstractRepository where T == 
     
     func delete(entity: T) -> Observable<Void> {
         return Observable<Void>.create { (observer) -> Disposable in
-            let coreData = entity.asCoreData()
             do {
-                observer.onNext(try self.context.rx.delete(coreData))
+                observer.onNext(try self.context.rx.delete(entity.asCoreData()))
             } catch let error {
                 observer.onError(error)
             }
