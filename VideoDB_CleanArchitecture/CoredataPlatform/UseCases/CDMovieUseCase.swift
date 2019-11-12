@@ -9,7 +9,9 @@
 import Domain
 import RxSwift
 
-internal class CDMovieUseCase<Repository>: Domain.MovieUseCase where Repository: AbstractRepository, Repository.T == Movie {
+internal class CDMovieUseCase<Repository>: Domain.MovieUseCase
+                                           where Repository: AbstractRepository,
+                                                 Repository.T == MoviesResponse {
     private let repository: Repository
     
     init(repository: Repository) {
@@ -17,7 +19,23 @@ internal class CDMovieUseCase<Repository>: Domain.MovieUseCase where Repository:
     }
     
     func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]> {
-        let sort = NSSortDescriptor(key: CDMovie.CDKeys.id.rawValue, ascending: true)
-        return repository.query(with: nil, sortDescriptors: [sort])
+        let movies = MoviesResponse(page: 0, totalResults: 0, totalPages: 0, movies: [
+            Movie(movieId: 1, posterPath: "posterPath", originalTitle: "originalTitle", overview: "overview", releaseDate: "releaseDate", voteAverage: 1),
+            Movie(movieId: 1, posterPath: "posterPath", originalTitle: "originalTitle", overview: "overview", releaseDate: "releaseDate", voteAverage: 2)
+        ])
+        
+        repository.save(entity: movies).subscribe(onNext: { _ in
+            print("---")
+        })
+        
+        
+        return repository.query(with: nil, sortDescriptors: nil)
+            .map { array -> [Movie] in
+                var movies = [Movie]()
+                array.forEach { (MoviesResponse) in
+                    movies.append(contentsOf: MoviesResponse.movies)
+                }
+                return movies
+        }
     }
 }

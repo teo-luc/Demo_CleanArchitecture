@@ -7,7 +7,7 @@
         <attribute name="posterPath" optional="YES" attributeType="String"/>
         <attribute name="releaseDate" optional="YES" attributeType="String"/>
         <attribute name="voteAverage" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDMovies" inverseName="movies" inverseEntity="CDMovies"/>
+        <relationship name="movies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDMovies" inverseName="movies" inverseEntity="CDMovies"/>
     </entity>
     <entity name="CDMovies" representedClassName="" syncable="YES">
         <attribute name="kindOf" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

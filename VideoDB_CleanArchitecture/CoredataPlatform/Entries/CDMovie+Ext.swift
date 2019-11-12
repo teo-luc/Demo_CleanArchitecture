@@ -15,10 +15,6 @@ import Domain
 // Mark: - CoreData Extension
 
 extension CDMovie : Persistable {
-    struct Person {
-      var address: Int
-    }
-    
     enum CDKeys: String, CodingKey {
         case id            = "movieId"
         case posterPath    = "posterPath"
@@ -35,7 +31,7 @@ extension CDMovie : Persistable {
     }
     
     public static var primaryAttributeName: String {
-        return CDMovie.CDKeys.id.rawValue
+        return CDKeys.id.rawValue
     }
     
     var identity: String {
@@ -77,6 +73,18 @@ extension CDMovie: DomainConvertibleType {
                      releaseDate   : releaseDate,
                      voteAverage   : voteAverage)
     }
+}
+
+extension CDMovie: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(movieId)
+    }
+}
+
+func == (lhs: CDMovie, rhs: CDMovie) -> Bool {
+    return (
+            lhs.movieId == rhs.movieId
+    )
 }
 
 // Mark: - Domain Extension

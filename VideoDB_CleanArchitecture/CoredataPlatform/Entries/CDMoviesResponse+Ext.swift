@@ -12,11 +12,8 @@ import RxDataSources
 import RxCoreData
 import Domain
 
-extension CDMoviesResponse : IdentifiableType {
-    public typealias Identity = String
 
-    public var identity: Identity { return String(self.kindOf) }
-}
+// Mark: - CoreData Extension
 
 extension CDMoviesResponse: Persistable {
     enum CodingKeys: String, CodingKey {
@@ -27,21 +24,26 @@ extension CDMoviesResponse: Persistable {
     public typealias T = NSManagedObject
 
     public static var entityName: String {
-        return "CDMoviesResponse"
+        return "CDMovies"
     }
     
     public static var primaryAttributeName: String {
-        return CDMoviesResponse.CodingKeys.kindOf.rawValue
+        return CodingKeys.kindOf.rawValue
     }
-    
+
+    public var identity: String {
+        return String(self.kindOf)
+    }
+
     public init(entity: T) {
-        kindOf = entity.value(forKey: CDMoviesResponse.CodingKeys.kindOf.rawValue) as! Int
-        movies = entity.value(forKey: CDMoviesResponse.CodingKeys.movies.rawValue) as! [CDMovie]
+        kindOf = entity[CodingKeys.kindOf] as! Int
+        movies = entity[CodingKeys.movies] as! [CDMovie]
     }
     
     public func update(_ entity: T) {
-        entity.setValue(kindOf, forKey : CDMoviesResponse.CodingKeys.kindOf.rawValue)
-        entity.setValue(movies, forKey : CDMoviesResponse.CodingKeys.movies.rawValue)
+        Set(movies)
+        entity[CodingKeys.kindOf] = kindOf
+        entity[CodingKeys.movies] = movies
         do {
             try entity.managedObjectContext?.save()
         } catch let e {
@@ -50,3 +52,18 @@ extension CDMoviesResponse: Persistable {
     }
 }
 
+extension CDMoviesResponse: DomainConvertibleType {
+    typealias DomainType = Domain.MoviesResponse
+    func asDomain() -> DomainType {
+        return DomainType(page: 0, totalResults: 0, totalPages: 0, movies: self.movies.map { $0.asDomain() })
+    }
+}
+
+// Mark: - Domain Extension
+
+extension MoviesResponse: CoreDataRepresentable {
+    typealias CoreDataType = CDMoviesResponse
+    func asCoreData() -> CoreDataType {
+        return CoreDataType(kindOf: 1, movies: self.movies.map { $0.asCoreData() })
+    }
+}

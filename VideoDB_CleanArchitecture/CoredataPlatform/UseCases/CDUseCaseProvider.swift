@@ -10,9 +10,9 @@ import Domain
 
 open class CDUseCaseProvider: Domain.UseCaseProvider {
     private let coreDataStack = CoreDataStack()
-    private let postRepository: Repository<Movie>
+    private let postRepository: Repository<MoviesResponse>
     public init() {
-        postRepository = Repository<Movie>(context: coreDataStack.context)
+        postRepository = Repository<MoviesResponse>(context: coreDataStack.context)
     }
     
     public func makeMovieUseCase() -> MovieUseCase {
