@@ -18,20 +18,22 @@ protocol AbstractRepository {
     func delete(entity: T) -> Observable<Void>
 }
 
-final class Repository<T: Persistable>: AbstractRepository {
+final class Repository<T: CoreDataRepresentable>: AbstractRepository where T == T.CoreDataType.DomainType  {
     private let context: NSManagedObjectContext
     init(context: NSManagedObjectContext) {
         self.context = context
     }
     
     func query(with predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?) -> Observable<[T]> {
-        return context.rx.entities(T.self, predicate: predicate, sortDescriptors: sortDescriptors)
+        return context.rx.entities(T.CoreDataType.self, predicate: predicate, sortDescriptors: sortDescriptors)
+                .map { $0.map { $0.asDomain() } }
     }
     
     func save(entity: T) -> Observable<Void> {
         return Observable<Void>.create { (observer) -> Disposable in
+            let coreData = entity.asCoreData()
             do {
-                observer.onNext(try self.context.rx.update(entity))
+                observer.onNext(try self.context.rx.update(coreData))
             } catch let error {
                 observer.onError(error)
             }
@@ -41,8 +43,9 @@ final class Repository<T: Persistable>: AbstractRepository {
     
     func delete(entity: T) -> Observable<Void> {
         return Observable<Void>.create { (observer) -> Disposable in
+            let coreData = entity.asCoreData()
             do {
-                observer.onNext(try self.context.rx.delete(entity))
+                observer.onNext(try self.context.rx.delete(coreData))
             } catch let error {
                 observer.onError(error)
             }

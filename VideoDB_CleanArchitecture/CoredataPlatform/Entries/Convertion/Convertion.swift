@@ -7,16 +7,23 @@
 //
 
 import Foundation
+import RxSwift
 import CoreData
 import RxDataSources
 import RxCoreData
+
+// MARK: - CoreData (convert from `CoreData` -> `Domain`)
 
 protocol DomainConvertibleType {
     associatedtype DomainType
     func asDomain() -> DomainType
 }
 
-protocol CoreDataRepresentable {
-    associatedtype CoreDataType: Persistable
-}
+typealias CoreDataConvertibleType = Persistable & DomainConvertibleType
 
+// MARK: - Domain (convert from `Domain` -> `CoreData`)
+
+protocol CoreDataRepresentable {
+    associatedtype CoreDataType: CoreDataConvertibleType
+    func asCoreData() -> CoreDataType
+}

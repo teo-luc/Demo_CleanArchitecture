@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Movie" representedClassName="" syncable="YES">
+    <entity name="CDMovie" representedClassName="" syncable="YES">
         <attribute name="movieId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="originalTitle" optional="YES" attributeType="String"/>
         <attribute name="overview" optional="YES" attributeType="String"/>
         <attribute name="posterPath" optional="YES" attributeType="String"/>
         <attribute name="releaseDate" optional="YES" attributeType="String"/>
         <attribute name="voteAverage" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" inverseName="movies" inverseEntity="Movies"/>
+        <relationship name="movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDMovies" inverseName="movies" inverseEntity="CDMovies"/>
     </entity>
-    <entity name="Movies" representedClassName="" syncable="YES">
+    <entity name="CDMovies" representedClassName="" syncable="YES">
         <attribute name="kindOf" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="movies" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Movie" inverseName="movies" inverseEntity="Movie"/>
+        <relationship name="movies" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="CDMovie" inverseName="movies" inverseEntity="CDMovie"/>
     </entity>
     <elements>
-        <element name="Movie" positionX="-103.81640625" positionY="97.18359375" width="128" height="148"/>
-        <element name="Movies" positionX="-374.63671875" positionY="-32.30859375" width="128" height="73"/>
+        <element name="CDMovie" positionX="-103.81640625" positionY="97.18359375" width="128" height="148"/>
+        <element name="CDMovies" positionX="-374.63671875" positionY="-32.30859375" width="128" height="73"/>
     </elements>
 </model>

@@ -12,11 +12,7 @@ import RxDataSources
 import RxCoreData
 import Domain
 
-extension CDMovie : IdentifiableType {
-    public typealias Identity = String
-
-    public var identity: Identity { return String(movieId) }
-}
+// Mark: - CoreData Extension
 
 extension CDMovie : Persistable {
     enum CodingKeys: String, CodingKey {
@@ -31,11 +27,15 @@ extension CDMovie : Persistable {
     public typealias T = NSManagedObject
     
     public static var entityName: String {
-        return "Movie"
+        return String(describing: self)
     }
     
     public static var primaryAttributeName: String {
         return CDMovie.CodingKeys.id.rawValue
+    }
+    
+    var identity: String {
+        return String(movieId)
     }
     
     public init(entity: T) {
@@ -66,15 +66,25 @@ extension CDMovie : Persistable {
 extension CDMovie: DomainConvertibleType {
     typealias DomainType = Domain.Movie
     func asDomain() -> DomainType {
-        return Movie(movieId: movieId,
-                     posterPath: posterPath,
-                     originalTitle: originalTitle,
-                     overview: overview,
-                     releaseDate: releaseDate,
-                     voteAverage: voteAverage)
+        return Movie(movieId       : movieId,
+                     posterPath    : posterPath,
+                     originalTitle : originalTitle,
+                     overview      : overview,
+                     releaseDate   : releaseDate,
+                     voteAverage   : voteAverage)
     }
 }
 
+// Mark: - Domain Extension
+
 extension Movie: CoreDataRepresentable {
     typealias CoreDataType = CDMovie
+    func asCoreData() -> CoreDataType {
+        return CDMovie(movieId       : movieId,
+                       posterPath    : posterPath,
+                       originalTitle : originalTitle,
+                       overview      : overview,
+                       releaseDate   : releaseDate,
+                       voteAverage   : voteAverage)
+    }
 }
