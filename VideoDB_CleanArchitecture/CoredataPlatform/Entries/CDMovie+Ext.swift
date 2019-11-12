@@ -15,7 +15,11 @@ import Domain
 // Mark: - CoreData Extension
 
 extension CDMovie : Persistable {
-    enum CodingKeys: String, CodingKey {
+    struct Person {
+      var address: Int
+    }
+    
+    enum CDKeys: String, CodingKey {
         case id            = "movieId"
         case posterPath    = "posterPath"
         case originalTitle = "originalTitle"
@@ -31,7 +35,7 @@ extension CDMovie : Persistable {
     }
     
     public static var primaryAttributeName: String {
-        return CDMovie.CodingKeys.id.rawValue
+        return CDMovie.CDKeys.id.rawValue
     }
     
     var identity: String {
@@ -39,21 +43,21 @@ extension CDMovie : Persistable {
     }
     
     public init(entity: T) {
-        movieId       = entity.value(forKey : CDMovie.CodingKeys.id.rawValue)            as! Int
-        posterPath    = entity.value(forKey : CDMovie.CodingKeys.posterPath.rawValue)    as! String
-        originalTitle = entity.value(forKey : CDMovie.CodingKeys.originalTitle.rawValue) as! String
-        overview      = entity.value(forKey : CDMovie.CodingKeys.overview.rawValue)      as! String
-        releaseDate   = entity.value(forKey : CDMovie.CodingKeys.releaseDate.rawValue)   as! String
-        voteAverage   = entity.value(forKey : CDMovie.CodingKeys.voteAverage.rawValue)   as! Float
+        movieId       = entity[CDKeys.id]            as! Int
+        posterPath    = entity[CDKeys.posterPath]    as! String
+        originalTitle = entity[CDKeys.originalTitle] as! String
+        overview      = entity[CDKeys.overview]      as! String
+        releaseDate   = entity[CDKeys.releaseDate]   as! String
+        voteAverage   = entity[CDKeys.voteAverage]   as! Float
     }
     
     public func update(_ entity: T) {
-        entity.setValue(movieId,      forKey : CDMovie.CodingKeys.id.rawValue)
-        entity.setValue(posterPath,   forKey : CDMovie.CodingKeys.posterPath.rawValue)
-        entity.setValue(originalTitle,forKey : CDMovie.CodingKeys.originalTitle.rawValue)
-        entity.setValue(overview,     forKey : CDMovie.CodingKeys.overview.rawValue)
-        entity.setValue(releaseDate,  forKey : CDMovie.CodingKeys.releaseDate.rawValue)
-        entity.setValue(voteAverage,  forKey : CDMovie.CodingKeys.voteAverage.rawValue)
+        entity[CDKeys.id]            = movieId
+        entity[CDKeys.posterPath]    = posterPath
+        entity[CDKeys.originalTitle] = originalTitle
+        entity[CDKeys.overview]      = overview
+        entity[CDKeys.releaseDate]   = releaseDate
+        entity[CDKeys.voteAverage]   = voteAverage
         do {
             try entity.managedObjectContext?.save()
         } catch let e {

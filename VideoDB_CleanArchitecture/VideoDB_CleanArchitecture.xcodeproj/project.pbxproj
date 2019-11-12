@@ -48,6 +48,9 @@
 		DD2544792372AC7A007C730C /* Movie+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2544782372AC7A007C730C /* Movie+Mapping.swift */; };
 		DD2F567523755C6100BEC8C9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F567423755C6100BEC8C9 /* APIError.swift */; };
 		DD2F56772375630000BEC8C9 /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F5676237562FF00BEC8C9 /* APITarget.swift */; };
+		DD342819237A9B3D00AA98B1 /* NSManagedObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD342818237A9B3D00AA98B1 /* NSManagedObject+Ext.swift */; };
+		DD34281B237A9CEC00AA98B1 /* NSManagedObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34281A237A9CEC00AA98B1 /* NSManagedObject+Ext.swift */; };
+		DD34281C237A9CEC00AA98B1 /* NSManagedObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34281A237A9CEC00AA98B1 /* NSManagedObject+Ext.swift */; };
 		DD838DF5237A8C4800212800 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD838DF4237A8C4800212800 /* Constant.swift */; };
 		DD98278823793D3B00C849D6 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98278723793D3B00C849D6 /* Repository.swift */; };
 		DD98278923793D3B00C849D6 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98278723793D3B00C849D6 /* Repository.swift */; };
@@ -214,6 +217,8 @@
 		DD2544782372AC7A007C730C /* Movie+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Mapping.swift"; sourceTree = "<group>"; };
 		DD2F567423755C6100BEC8C9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		DD2F5676237562FF00BEC8C9 /* APITarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
+		DD342818237A9B3D00AA98B1 /* NSManagedObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Ext.swift"; sourceTree = "<group>"; };
+		DD34281A237A9CEC00AA98B1 /* NSManagedObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Ext.swift"; sourceTree = "<group>"; };
 		DD838DF4237A8C4800212800 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DD98278723793D3B00C849D6 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DD98278B237943A000C849D6 /* CDMovieUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMovieUseCase.swift; sourceTree = "<group>"; };
@@ -486,6 +491,7 @@
 		DD838DF0237A6B1800212800 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DD34281A237A9CEC00AA98B1 /* NSManagedObject+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 		DD838DF3237A8C2F00212800 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DD342818237A9B3D00AA98B1 /* NSManagedObject+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1053,6 +1060,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD342819237A9B3D00AA98B1 /* NSManagedObject+Ext.swift in Sources */,
 				DD246717237165BE002B101B /* NWUseCaseProvider.swift in Sources */,
 				DD25446D23728570007C730C /* MoviesResponseNetwork.swift in Sources */,
 				DD246712237162D5002B101B /* MovieNetwork.swift in Sources */,
@@ -1085,6 +1093,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD98278C237943A000C849D6 /* CDMovieUseCase.swift in Sources */,
+				DD34281B237A9CEC00AA98B1 /* NSManagedObject+Ext.swift in Sources */,
 				DD98278F237943AC00C849D6 /* CDUseCaseProvider.swift in Sources */,
 				DD98279B237952F900C849D6 /* CDMoviesResponse.swift in Sources */,
 				DD98279F2379557A00C849D6 /* Convertion.swift in Sources */,
@@ -1112,6 +1121,7 @@
 				DDA3303A237939B500824D0D /* CDMoviesResponse+Ext.swift in Sources */,
 				DD98279423794A7700C849D6 /* Model.xcdatamodeld in Sources */,
 				DDA32FEB237912A400824D0D /* CoreDataStack.swift in Sources */,
+				DD34281C237A9CEC00AA98B1 /* NSManagedObject+Ext.swift in Sources */,
 				DD98278D237943A000C849D6 /* CDMovieUseCase.swift in Sources */,
 				DDA330372379348C00824D0D /* CDMovie+Ext.swift in Sources */,
 			);

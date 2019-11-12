@@ -7,9 +7,6 @@
 //
 
 import Foundation
-import RxSwift
-import CoreData
-import RxDataSources
 import RxCoreData
 
 // MARK: - CoreData (convert from `CoreData` -> `Domain`)

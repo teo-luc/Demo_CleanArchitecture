@@ -17,7 +17,7 @@ internal class CDMovieUseCase<Repository>: Domain.MovieUseCase where Repository:
     }
     
     func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]> {
-        let sort = NSSortDescriptor(key: CDMovie.CodingKeys.id.rawValue, ascending: true)
+        let sort = NSSortDescriptor(key: CDMovie.CDKeys.id.rawValue, ascending: true)
         return repository.query(with: nil, sortDescriptors: [sort])
     }
 }
