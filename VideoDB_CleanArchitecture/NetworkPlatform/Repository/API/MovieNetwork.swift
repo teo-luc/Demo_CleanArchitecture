@@ -19,9 +19,9 @@ protocol MovieNetworkProtocol {
 // MARK: MoviesNetwork
 
 internal final class MovieNetwork: MovieNetworkProtocol {
-    private let network: Network<Movie>
+    private let network: Network<Domain.Movie>
     private let apiKey: String
-    init(network: Network<Movie>, apiKey: String) {
+    init(network: Network<Domain.Movie>, apiKey: String) {
         self.network = network
         self.apiKey = apiKey
     }

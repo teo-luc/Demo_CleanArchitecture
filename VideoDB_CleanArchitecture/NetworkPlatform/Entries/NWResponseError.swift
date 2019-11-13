@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ResponseError: Codable {
+struct NWResponseError: Codable {
     
     public let statusCode    : Int
     public let statusMessage : String

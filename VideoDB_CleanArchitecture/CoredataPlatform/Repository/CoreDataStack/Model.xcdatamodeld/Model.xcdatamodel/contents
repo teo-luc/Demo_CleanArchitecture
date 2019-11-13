@@ -14,7 +14,7 @@
         <relationship name="movies" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="CDMovie" inverseName="movies" inverseEntity="CDMovie"/>
     </entity>
     <elements>
-        <element name="CDMovie" positionX="-103.81640625" positionY="97.18359375" width="128" height="148"/>
-        <element name="CDMovies" positionX="-374.63671875" positionY="-32.30859375" width="128" height="73"/>
+        <element name="CDMovie" positionX="-9.57421875" positionY="17.703125" width="128" height="148"/>
+        <element name="CDMovies" positionX="-303.296875" positionY="-42.65625" width="128" height="73"/>
     </elements>
 </model>

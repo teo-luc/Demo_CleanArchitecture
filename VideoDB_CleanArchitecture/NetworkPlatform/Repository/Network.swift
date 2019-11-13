@@ -13,7 +13,7 @@ import Domain
 
 // MARK: - Network
 
-internal final class Network<T: Decodable> {
+internal final class Network<T: NetworkRepresentable> where T == T.NetworkType.DomainType {
     private let endPoint: String
     //
     private let provider = IgnoringCacheDataProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
@@ -42,8 +42,8 @@ internal final class Network<T: Decodable> {
 // MARK: Network Extension
 
 extension Network {
-    private func request<Type: Decodable>(_ api: APITarget) -> Observable<Type> {
-    return Observable<Type>.create { (observer) -> Disposable in
+    private func request(_ api: APITarget) -> Observable<T> {
+    return Observable<T>.create { (observer) -> Disposable in
             let disposable = self.provider.rx
                 .request(MultiTarget(api))
                 .observeOn(self.scheduler)
@@ -56,8 +56,8 @@ extension Network {
                     /*
                      * Success case:
                      */
-                    if let model = try? jsonDecoder.decode(Type.self, from: jsonData) {
-                        observer.onNext(model)
+                    if let model = try? jsonDecoder.decode(T.NetworkType.self, from: jsonData) {
+                        observer.onNext(model.asDomain())
                     }
                         
                     /*
@@ -67,7 +67,7 @@ extension Network {
                         //
                         let jsonString = String(data: jsonData, encoding: .utf8)
                         // 1. API Error
-                        if let apiError = try? jsonDecoder.decode(ResponseError.self, from: jsonData) {
+                        if let apiError = try? jsonDecoder.decode(NWResponseError.self, from: jsonData) {
                             let code = apiError.statusCode
                             let description = apiError.statusMessage
                             observer.onError(APIError.apiError(code: code, description: description, info: jsonString))

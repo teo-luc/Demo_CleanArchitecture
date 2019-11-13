@@ -11,8 +11,8 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 //
-//import NetworkPlatform
-import CoredataPlatform
+import NetworkPlatform
+//import CoredataPlatform
 //
 import Domain
 
@@ -20,7 +20,7 @@ class MoviesViewController: UIViewController {
     //
     let disposeBag = DisposeBag()
     // TODO: Just only for testing..
-    let viewModel  = MoviesViewModel(useCase: CDUseCaseProvider().makeMovieUseCase())
+    let viewModel  = MoviesViewModel(useCase: NWUseCaseProvider().makeMovieUseCase())
     //
     @IBOutlet weak var segmentedControl : UISegmentedControl!
     @IBOutlet weak var tableView        : UITableView!
