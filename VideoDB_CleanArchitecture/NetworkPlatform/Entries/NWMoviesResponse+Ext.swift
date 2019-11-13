@@ -20,6 +20,7 @@ extension NWMoviesResponse: Codable {
     public init(from decoder: Decoder) throws {
         let container    = try decoder.container(keyedBy: CodingKeys.self)
         //
+        type         = nil
         movies       = try container.decode([NWMovie].self, forKey : .movies)
         page         = try container.decode(Int.self,       forKey : .page)
         totalResults = try container.decode(Int.self,       forKey : .totalResults)
@@ -34,8 +35,17 @@ extension NWMoviesResponse: Codable {
 
 extension NWMoviesResponse: DomainConvertibleType {
     typealias DomainType = Domain.MoviesResponse
+    
+    mutating func responseFromTarget(target: APITarget) {
+        switch target {
+        case .movies(_, _, let kindOf):
+            type = MoviesResponse.KindOf(rawValue: kindOf)
+        default: break
+        }
+    }
+
     func asDomain() -> DomainType {
-        return DomainType(type   : .nowPlaying,
+        return DomainType(type   : type!,
                           movies : self.movies.map { $0.asDomain() } )
     }
 }

@@ -45,7 +45,7 @@ extension NWMovie: DomainConvertibleType {
                           overview      : overview,
                           releaseDate   : releaseDate,
                           voteAverage   : voteAverage)
-    }
+    }    
 }
 
 extension Domain.Movie: NetworkRepresentable {

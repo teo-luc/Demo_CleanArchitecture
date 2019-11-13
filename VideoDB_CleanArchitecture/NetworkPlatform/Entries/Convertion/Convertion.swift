@@ -12,7 +12,13 @@ import Foundation
 
 protocol DomainConvertibleType {
     associatedtype DomainType
+    mutating func responseFromTarget(target: APITarget)
     func asDomain() -> DomainType
+}
+extension DomainConvertibleType {
+    mutating func responseFromTarget(target: APITarget) {
+        /* Adding some stuff here */
+    }
 }
 
 typealias ConvertibleType = Decodable & DomainConvertibleType

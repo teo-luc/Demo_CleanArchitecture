@@ -7,8 +7,9 @@
 //
 
 import Foundation
-
+import Domain
 struct NWMoviesResponse {
+    var type         : MoviesResponse.KindOf?
     var page         : Int
     var totalResults : Int
     var totalPages   : Int

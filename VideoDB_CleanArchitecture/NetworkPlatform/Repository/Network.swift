@@ -55,7 +55,10 @@ extension Network {
                     /*
                      * Success case:
                      */
-                    if let model = try? jsonDecoder.decode(T.NetworkType.self, from: jsonData) {
+                    if var model = try? jsonDecoder.decode(T.NetworkType.self, from: jsonData) {
+                        // 1. Add a trigger to know the api type
+                        model.responseFromTarget(target: api)
+                        // 2
                         observer.onNext(model.asDomain())
                     }
                         
