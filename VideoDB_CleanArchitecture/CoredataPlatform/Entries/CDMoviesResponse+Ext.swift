@@ -36,14 +36,24 @@ extension CDMoviesResponse: Persistable {
     }
 
     public init(entity: T) {
-        kindOf = entity[CodingKeys.kindOf] as! Int
-        movies = entity[CodingKeys.movies] as! [CDMovie]
+        // 1
+        kindOf        = entity[CodingKeys.kindOf] as! Int
+        // 2
+        let moviesSet = entity[CodingKeys.movies] as! Set<CDMovie.T>
+        movies        = moviesSet.map { CDMovie(entity: $0) }
     }
     
     public func update(_ entity: T) {
-        Set(movies)
+        // 1
         entity[CodingKeys.kindOf] = kindOf
-        entity[CodingKeys.movies] = movies
+        // 2
+        let movies: Array<CDMovie.T> = self.movies.map { movie in
+            let emptyEntity = entity.managedObjectContext?.rx.getOrCreateEntity(for: movie)
+            movie.update(emptyEntity!)
+            return emptyEntity!
+        }
+        entity[CodingKeys.movies] = Set(movies)
+        // 3
         do {
             try entity.managedObjectContext?.save()
         } catch let e {

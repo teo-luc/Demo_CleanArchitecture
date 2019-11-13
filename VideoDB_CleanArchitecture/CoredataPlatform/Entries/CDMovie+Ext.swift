@@ -75,18 +75,6 @@ extension CDMovie: DomainConvertibleType {
     }
 }
 
-extension CDMovie: Hashable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(movieId)
-    }
-}
-
-func == (lhs: CDMovie, rhs: CDMovie) -> Bool {
-    return (
-            lhs.movieId == rhs.movieId
-    )
-}
-
 // Mark: - Domain Extension
 
 extension Movie: CoreDataRepresentable {
