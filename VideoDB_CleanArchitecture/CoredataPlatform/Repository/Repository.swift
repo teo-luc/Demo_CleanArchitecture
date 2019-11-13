@@ -14,6 +14,7 @@ import RxCoreData
 protocol AbstractRepository {
     associatedtype T
     func query(with predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?) -> Observable<[T]>
+    func query(with predicate: NSPredicate?) -> Observable<T?>
     func save(entity: T) -> Observable<Void>
     func delete(entity: T) -> Observable<Void>
 }
@@ -27,6 +28,11 @@ final class Repository<T: CoreDataRepresentable>: AbstractRepository where T == 
     func query(with predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?) -> Observable<[T]> {
         return context.rx.entities(T.CoreDataType.self, predicate: predicate, sortDescriptors: sortDescriptors)
                 .map { $0.map { $0.asDomain() } }
+    }
+    
+    func query(with predicate: NSPredicate?) -> Observable<T?> {
+        let ob = query(with: predicate, sortDescriptors: nil)
+        return ob.map { $0.first }
     }
     
     func save(entity: T) -> Observable<Void> {

@@ -19,23 +19,8 @@ internal class CDMovieUseCase<Repository>: Domain.MovieUseCase
     }
     
     func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]> {
-        let movies = MoviesResponse(page: 0, totalResults: 0, totalPages: 0, movies: [
-            Movie(movieId: 1, posterPath: "posterPath", originalTitle: "originalTitle", overview: "overview", releaseDate: "releaseDate", voteAverage: 1),
-            Movie(movieId: 2, posterPath: "posterPath", originalTitle: "originalTitle", overview: "overview", releaseDate: "releaseDate", voteAverage: 2)
-        ])
-        
-        repository.save(entity: movies).subscribe(onNext: { _ in
-            print("---")
-        })
-        
-        
-        return repository.query(with: nil, sortDescriptors: nil)
-            .map { array -> [Movie] in
-                var movies = [Movie]()
-                array.forEach { (MoviesResponse) in
-                    movies.append(contentsOf: MoviesResponse.movies)
-                }
-                return movies
+        return repository.query(with: nil).map { (moviesResponse) in
+            return moviesResponse?.movies ?? []
         }
     }
 }
