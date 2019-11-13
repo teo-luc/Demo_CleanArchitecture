@@ -11,16 +11,11 @@ import Foundation
 // MARK: - MoviesResponse
 
 public struct MoviesResponse {
-    public let page         : Int
-    public let totalResults : Int
-    public let totalPages   : Int
+    public let type         : KindOf
     public let movies       : [Movie]
-    
-    public init(page: Int, totalResults :Int, totalPages: Int, movies: [Movie]) {
-        self.page         = page
-        self.totalPages   = totalPages
-        self.totalResults = totalResults
-        self.movies       = movies
+    public init(type: KindOf, movies: [Movie]) {
+        self.type   = type
+        self.movies = movies
     }
 }
 
@@ -28,10 +23,8 @@ public struct MoviesResponse {
 extension MoviesResponse: Equatable {
     public static func == (lhs: MoviesResponse, rhs: MoviesResponse) -> Bool {
         return (
-            lhs.movies       == rhs.movies       &&
-            lhs.page         == rhs.page         &&
-            lhs.totalResults == rhs.totalResults &&
-            lhs.totalPages   == rhs.totalPages)
+            lhs.type    == rhs.type &&
+            lhs.movies  == rhs.movies)
     }
 }
 

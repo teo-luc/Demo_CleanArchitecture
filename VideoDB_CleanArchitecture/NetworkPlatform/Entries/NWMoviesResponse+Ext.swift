@@ -35,19 +35,18 @@ extension NWMoviesResponse: Codable {
 extension NWMoviesResponse: DomainConvertibleType {
     typealias DomainType = Domain.MoviesResponse
     func asDomain() -> DomainType {
-        return DomainType(page         : page,
-                          totalResults : totalResults,
-                          totalPages   : totalPages,
-                          movies       : self.movies.map { $0.asDomain() } )
+        return DomainType(type   : .nowPlaying,
+                          movies : self.movies.map { $0.asDomain() } )
     }
 }
 
 extension Domain.MoviesResponse: NetworkRepresentable {
     typealias NetworkType = NWMoviesResponse
     func asNetwork() -> NWMoviesResponse {
-        return NWMoviesResponse(page         : page,
-                                totalResults : totalResults,
-                                totalPages   : totalPages,
-                                movies       : movies.map { $0.asNetwork() })
+        let movies = self.movies.map { $0.asNetwork() }
+        return NWMoviesResponse(page         : 1,
+                                totalResults : movies.count,
+                                totalPages   : 1,
+                                movies       : movies)
     }
 }

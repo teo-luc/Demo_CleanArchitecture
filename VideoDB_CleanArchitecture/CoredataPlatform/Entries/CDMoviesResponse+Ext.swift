@@ -65,7 +65,8 @@ extension CDMoviesResponse: Persistable {
 extension CDMoviesResponse: DomainConvertibleType {
     typealias DomainType = Domain.MoviesResponse
     func asDomain() -> DomainType {
-        return DomainType(page: 0, totalResults: 0, totalPages: 0, movies: self.movies.map { $0.asDomain() })
+        return DomainType(type  : .nowPlaying,
+                          movies: self.movies.map { $0.asDomain() })
     }
 }
 
