@@ -9,6 +9,6 @@
 import Domain
 
 struct CDMoviesResponse {
-    public let kindOf: Int
+    public let type: MoviesResponse.KindOf
     public let movies: [CDMovie]
 }

@@ -32,12 +32,12 @@ extension CDMoviesResponse: Persistable {
     }
 
     public var identity: String {
-        return String(self.kindOf)
+        return type.rawValue
     }
 
     public init(entity: T) {
         // 1
-        kindOf        = entity[CodingKeys.kindOf] as! Int
+        type          =  MoviesResponse.KindOf(rawValue: entity[CodingKeys.kindOf] as! String)!
         // 2
         let moviesSet = entity[CodingKeys.movies] as! Set<CDMovie.T>
         movies        = moviesSet.map { CDMovie(entity: $0) }
@@ -45,7 +45,7 @@ extension CDMoviesResponse: Persistable {
     
     public func update(_ entity: T) {
         // 1
-        entity[CodingKeys.kindOf] = kindOf
+        entity[CodingKeys.kindOf] = type.rawValue
         // 2
         let movies: Array<CDMovie.T> = self.movies.map { movie in
             let emptyEntity = entity.managedObjectContext?.rx.getOrCreateEntity(for: movie)
@@ -65,8 +65,8 @@ extension CDMoviesResponse: Persistable {
 extension CDMoviesResponse: DomainConvertibleType {
     typealias DomainType = Domain.MoviesResponse
     func asDomain() -> DomainType {
-        return DomainType(type  : .nowPlaying,
-                          movies: self.movies.map { $0.asDomain() })
+        return MoviesResponse(type  : type,
+                              movies: self.movies.map { $0.asDomain() })
     }
 }
 
@@ -75,6 +75,6 @@ extension CDMoviesResponse: DomainConvertibleType {
 extension MoviesResponse: CoreDataRepresentable {
     typealias CoreDataType = CDMoviesResponse
     func asCoreData() -> CoreDataType {
-        return CoreDataType(kindOf: 1, movies: self.movies.map { $0.asCoreData() })
+        return CDMoviesResponse(type: type, movies: self.movies.map { $0.asCoreData() })
     }
 }

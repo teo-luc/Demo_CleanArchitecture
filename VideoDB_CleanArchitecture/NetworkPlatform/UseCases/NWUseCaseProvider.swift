@@ -9,7 +9,6 @@
 import Foundation
 import Domain
 
-
 public final class NWUseCaseProvider: Domain.UseCaseProvider {
     private let networkProvider: NetworkProvider
     public init() {
@@ -18,6 +17,4 @@ public final class NWUseCaseProvider: Domain.UseCaseProvider {
     public func makeMovieUseCase() -> Domain.MovieUseCase {
         return NWMovieUseCase(network: networkProvider.makeMoviesResponseNetwork())
     }
-    
-
 }

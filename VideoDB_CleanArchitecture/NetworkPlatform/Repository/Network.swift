@@ -49,7 +49,6 @@ extension Network {
                 .observeOn(self.scheduler)
                 .asObservable()
                 .subscribe(onNext: { (response) in
-//                    let statusCode = response.statusCode
                     let jsonData = response.data
                     let jsonDecoder = JSONDecoder()
                     

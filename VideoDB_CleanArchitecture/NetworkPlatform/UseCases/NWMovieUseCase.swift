@@ -10,17 +10,14 @@ import Foundation
 import RxSwift
 import Domain
 
-
 internal class NWMovieUseCase: Domain.MovieUseCase {
     private let network: MoviesResponseNetwork
     
-    init(network: MoviesResponseNetwork /*, cache: Cache*/) {
+    init(network: MoviesResponseNetwork) {
         self.network = network
     }
     
     func movies(kindOf: MoviesResponse.KindOf) -> Observable<[Movie]> {
         return network.fetchResponse(kindOf: kindOf).map { $0.movies }
     }
-    
-    
 }
